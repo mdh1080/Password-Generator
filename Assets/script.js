@@ -22,12 +22,12 @@ var specialCharacters = [
   '~',
   '-',
   '_',
-  '.',
+  '.'
 ];
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 // Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+var lowerCaseCharacters = [
   'a',
   'b',
   'c',
@@ -57,7 +57,7 @@ var lowerCasedCharacters = [
 ];
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+var upperCaseCharacters = [
   'A',
   'B',
   'C',
@@ -102,7 +102,7 @@ function getPasswordOptions() {
   // Variable to store length of password from user input
   var length = parseInt(
     prompt('How many characters would you like your password to contain?'),
-    10
+   10 
   );
 
   // Conditional statement to check if password length is a number. Prompts end if this evaluates false
@@ -118,23 +118,39 @@ function getPasswordOptions() {
   }
 
   // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
+  if (length > 128) {
+    alert('Password length must be less than 128 characters');
+    return null;
+  }
 
   // Variable to store boolean regarding the inclusion of special characters
-  var hasSpecialCharacters = confirm(
+  var SpecialCharacters = confirm(
     'Click OK to confirm including special characters.'
   );
+ 
 
   // Variable to store boolean regarding the inclusion of numeric characters
+ var numericCharacters = confirm(
+    'Click OK to confirm including numerical characters.'
+  );
 
   // Variable to store boolean regarding the inclusion of lowercase characters
-
+  var lowerCaseCharacters = confirm(
+    'Click OK to confirm including lower case characters.'
+  );
   // Variable to store boolean regarding the inclusion of uppercase characters
+  var upperCaseCharacters = confirm(
+    'Click OK to confirm including upper case characters.'
+  );
 
   // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
   // Object to store user input
   var passwordOptions = {
     length: length,
-    hasSpecialCharacters: hasSpecialCharacters,
+    specialCharacters: true,
+    numericCharacters:true,
+    lowerCaseCharacters:true,
+    upperCaseCharacters:true,
     //more options here
   };
 
@@ -142,11 +158,14 @@ function getPasswordOptions() {
 }
 
 function generatePassword() {
+
   // 2)
   var options = getPasswordOptions();
+  return("specialCharacters numericCharacters lowerCaseCharacters upperCaseCharacters");
   //Code Your logic Below
   // return "123456789"
 }
+
 // Write password to the #password input
 function writePassword() {
   // 1)
