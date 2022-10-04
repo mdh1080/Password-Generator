@@ -122,12 +122,10 @@ function getPasswordOptions() {
     alert('Password length must be less than 128 characters');
     return null;
   }
-
   // Variable to store boolean regarding the inclusion of special characters
-  var SpecialCharacters = confirm(
-    'Click OK to confirm including special characters.'
+ var specialCharacters = confirm(
+  'Click OK to confirm including special characters.'
   );
- 
 
   // Variable to store boolean regarding the inclusion of numeric characters
  var numericCharacters = confirm(
@@ -142,29 +140,41 @@ function getPasswordOptions() {
   var upperCaseCharacters = confirm(
     'Click OK to confirm including upper case characters.'
   );
-
+  
   // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
   // Object to store user input
   var passwordOptions = {
     length: length,
-    specialCharacters: true,
-    numericCharacters:true,
-    lowerCaseCharacters:true,
-    upperCaseCharacters:true,
+    specialCharacters,
+    numericCharacters,
+    lowerCaseCharacters,
+    upperCaseCharacters,
     //more options here
   };
 
-  return passwordOptions;
+return passwordOptions}
+
+function randomizedCharacters(options){
+  console.log("random", options)
+
 }
 
 function generatePassword() {
 
   // 2)
   var options = getPasswordOptions();
-  return("specialCharacters numericCharacters lowerCaseCharacters upperCaseCharacters");
+  console.log("generatePassword",options)
+  var randomChars=randomizedCharacters(options) 
+  var possibleChars = [];
+  if (options.specialCharacters ==true) {
+    possibleChars+=specialCharacters
+  }
+console.log(possibleChars)
+
   //Code Your logic Below
   // return "123456789"
 }
+
 
 // Write password to the #password input
 function writePassword() {
