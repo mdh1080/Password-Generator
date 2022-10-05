@@ -3,6 +3,9 @@
 ## Password generator application that enables employees to generate a random, unique password based on criteria that they’ve   selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code. Employees can choose to include special characters, lower and upper case letters, and numbers. The password must unclude at least one of these options, have at least 8 characters, and be no more than 128 characters.
 
 ## Usage
+Link to deployed webpage https://mdh1080.github.io/Password-Generator/
+
+![image](https://user-images.githubusercontent.com/110183347/194065805-b159c2dd-b781-4278-bd9b-67491b7f87ca.png)
 
 
 ##MIT License
